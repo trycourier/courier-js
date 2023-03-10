@@ -2,8 +2,12 @@ name: Release
 
 on:
   push:
-    branches:
-      - "v1.*"
+    paths-ignore:
+      - "README.md"
+    branches-ignore:
+      - "**"
+    tags:
+      - 'v1.*'
 
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
