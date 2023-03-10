@@ -19,40 +19,6 @@ This Turborepo has some additional tools already setup for you:
 - [ESLint](https://eslint.org/) for code linting
 - [Prettier](https://prettier.io) for code formatting
 
-## Using as an NPM package
-
-After signing up for a Courier account, you can find your client key in the [Courier Dashboard](https://app.courier.com/settings/api-keys).
-
-1. Install the package
-
-```sh
-# npm
-npm install @trycourier/courier-js
-# yarn
-yarn add @trycourier/courier-js
-
-# pnpm
-pnpm add @trycourier/courier-js
-```
-
-2. Import the package into your project and you're good to go (with working types)!
-
-```ts
-import courier from "@trycourier/courier-js";
-
-courier.init({
-  clientKey: "<REPLACE_WITH_YOUR_CLIENT_KEY>",
-  debug: true,
-});
-
-/*
-Upon initialization, you can use the SDK. All the methods are async and return a Promise `user | identify` means that you are identifying a user with a unique id in Courier and optionally passing in some user attributes like email, phone, etc. so that you can reach out to your users on right channels of their choice.
-*/
-courier.identify("<your_user_id>", {
-  email: "suhas+from+ui@courier.com",
-});
-```
-
 ## Getting Started
 
 ```sh
