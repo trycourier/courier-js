@@ -7,7 +7,7 @@ on:
     branches-ignore:
       - "**"
     tags:
-      - 'v*'
+      - 'v1.*'
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
