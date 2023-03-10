@@ -7,7 +7,6 @@ on:
     branches-ignore:
       - "**"
     tags:
-      # anything that starts with
       - 'v*'
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 
