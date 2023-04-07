@@ -15,7 +15,11 @@ const client = {
     if (!userId) {
       throw new Error("userId is required");
     }
-    await this.instance.post(`identify/${userId}`, payload);
+    await this.instance.post(`identify/${userId}`, {
+      profile: {
+        ...payload,
+      },
+    });
   },
   // apply common decorator to check if __instance is initialized
   async subscribe(userId: string, listId: string) {
