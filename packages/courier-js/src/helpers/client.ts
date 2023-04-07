@@ -31,7 +31,7 @@ async function tryCatch(
 export class Courier {
   private authorization?: string;
   private baseUrl: string;
-  private clientKey?: string;
+  public clientKey: string;
   private debug?: boolean;
   private userId?: string;
   private userSignature?: string;
@@ -44,7 +44,7 @@ export class Courier {
     userId,
     userSignature,
   }: CourierOptions) {
-    if (!clientKey || authorization) {
+    if (!clientKey) {
       throw new Error("Courier client key is required");
     }
     this.authorization = authorization;
@@ -106,8 +106,8 @@ export class Courier {
     userId: string,
     options?: PreferenceLinkOptions
   ): string {
-    if (!userId || !this.clientKey) {
-      throw new Error("userId and clientKey are required");
+    if (!userId) {
+      throw new Error("User ID is required to generate preferences URL");
     }
     const id = decode(this.clientKey);
 
