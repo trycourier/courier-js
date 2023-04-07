@@ -107,7 +107,7 @@ export class Courier {
     options?: PreferenceLinkOptions
   ): string {
     if (!userId || !this.clientKey) {
-      throw new Error("userId is required");
+      throw new Error("userId and clientKey are required");
     }
     const id = decode(this.clientKey);
 
