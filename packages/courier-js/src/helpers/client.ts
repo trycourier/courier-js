@@ -31,7 +31,7 @@ async function tryCatch(
 export class Courier {
   private authorization?: string;
   private baseUrl: string;
-  public clientKey?: string;
+  private clientKey?: string;
   private debug?: boolean;
   private userId?: string;
   private userSignature?: string;
