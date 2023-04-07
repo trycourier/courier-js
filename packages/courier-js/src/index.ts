@@ -1,4 +1,8 @@
-import { Courier, CourierOptions } from "./helpers/client";
+import {
+  Courier,
+  CourierOptions,
+  PreferenceLinkOptions,
+} from "./helpers/client";
 
 const client = {
   __instance: null as Courier | null,
@@ -15,7 +19,11 @@ const client = {
     if (!userId) {
       throw new Error("userId is required");
     }
-    await this.instance.post(`identify/${userId}`, payload);
+    await this.instance.post(`identify/${userId}`, {
+      profile: {
+        ...payload,
+      },
+    });
   },
   // apply common decorator to check if __instance is initialized
   async subscribe(userId: string, listId: string) {
@@ -29,6 +37,13 @@ const client = {
       throw new Error("userId is required");
     }
     this.instance.delete(`lists/${listId}/unsubscribe/${userId}`);
+  },
+
+  generatePreferencesUrl(
+    userId: string,
+    options?: PreferenceLinkOptions
+  ): string {
+    return this.instance.generatePreferencesUrl(userId, options);
   },
 };
 

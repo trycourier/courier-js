@@ -1,4 +1,4 @@
-[![Courier: Your Complete Communication Stack](https://marketing-assets-public.s3.us-west-1.amazonaws.com/github_nodejs.png)](https://courier.com)
+[![Courier: Your Complete Communication Stack](https://www.courier.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fz7iqk1q8njt4%2F1PZo9WNTdmoDoYH3yulXa0%2Fb10830f7bfb09af5e644a39ac3d20c41%2FCourierJS_header_alt2.png&w=1920&q=75)](https://courier.com)
 
 ## Requirements
 
@@ -30,5 +30,16 @@ Upon initialization, you can use the SDK. All the methods are async and return a
 */
 courier.identify("<your_user_id>", {
   email: "suhas+from+ui@courier.com",
+});
+```
+
+## Send User to Preference Center
+
+This method generates a URL that you can use to send your users to the Courier Preference Center to let them manage their notification preferences. You can use this URL in your application to send your users to the Preference Center.
+
+```ts
+const prefCenterLink = courier.generatePreferencesUrl("<your_user_id>", {
+  // optional
+  brandId: "<your_brand_id>",
 });
 ```
