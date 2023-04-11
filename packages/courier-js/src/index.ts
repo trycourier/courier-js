@@ -1,4 +1,8 @@
-import { Courier, CourierOptions } from "./helpers/client";
+import {
+  Courier,
+  CourierOptions,
+  PreferenceLinkOptions,
+} from "./helpers/client";
 
 const client = {
   __instance: null as Courier | null,
@@ -33,6 +37,13 @@ const client = {
       throw new Error("userId is required");
     }
     this.instance.delete(`lists/${listId}/unsubscribe/${userId}`);
+  },
+
+  generatePreferencesUrl(
+    userId: string,
+    options?: PreferenceLinkOptions
+  ): string {
+    return this.instance.generatePreferencesUrl(userId, options);
   },
 };
 

@@ -1,4 +1,5 @@
 import { version } from "../../package.json";
+import { encode, decode } from "./decode";
 
 export type CourierOptions = {
   authorization?: string;
@@ -7,6 +8,10 @@ export type CourierOptions = {
   debug?: boolean;
   userId?: string;
   userSignature?: string;
+};
+
+export type PreferenceLinkOptions = {
+  brandId?: string;
 };
 
 async function tryCatch(
@@ -26,7 +31,7 @@ async function tryCatch(
 export class Courier {
   private authorization?: string;
   private baseUrl: string;
-  private clientKey?: string;
+  private clientKey: string;
   private debug?: boolean;
   private userId?: string;
   private userSignature?: string;
@@ -39,7 +44,7 @@ export class Courier {
     userId,
     userSignature,
   }: CourierOptions) {
-    if (!clientKey || authorization) {
+    if (!clientKey) {
       throw new Error("Courier client key is required");
     }
     this.authorization = authorization;
@@ -95,5 +100,19 @@ export class Courier {
       });
     };
     await tryCatch(deleteFn, this.debug);
+  }
+
+  generatePreferencesUrl(
+    userId: string,
+    options?: PreferenceLinkOptions
+  ): string {
+    if (!userId) {
+      throw new Error("User ID is required to generate preferences URL");
+    }
+    const id = decode(this.clientKey);
+
+    return `https://view.notificationcenter.app/p/${encode(
+      `${id}#${options?.brandId ?? ""}#${userId}#${false}`
+    )}`;
   }
 }
