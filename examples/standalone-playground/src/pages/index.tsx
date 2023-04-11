@@ -1,13 +1,16 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import courierSDK from "@trycourier/courier-js";
+import Link from "next/link";
+
+courierSDK.init({
+  clientKey: "<REPLACE_ME_WITH_REAL_KEY>",
+  debug: true,
+});
 
 export default function Example() {
-  useEffect(() => {
-    courierSDK.init({
-      clientKey: "<REPLACE_WITH_YOUR_CLIENT_KEY>",
-      debug: true,
-    });
-  }, []);
+  const [prefLink] = useState<string>(
+    courierSDK.generatePreferencesUrl("suhas_demo")
+  );
 
   async function handleEvent(
     event: "identity" | "subscribe" | "unsubscribe" | "track"
@@ -36,6 +39,9 @@ export default function Example() {
   return (
     <div>
       <h1>Courier-js</h1>
+      <h2>
+        <Link href={prefLink}>Manage your preferences</Link>
+      </h2>
       <button onClick={() => handleEvent("identity")}>Identify</button>
       <button onClick={() => handleEvent("subscribe")}>Subscribe</button>
       <button onClick={() => handleEvent("unsubscribe")}>Unsubscribe</button>
