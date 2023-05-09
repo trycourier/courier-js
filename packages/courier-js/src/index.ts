@@ -32,6 +32,19 @@ const client = {
     }
     await this.instance.put(`lists/${listId}/subscribe/${userId}`);
   },
+
+  async track(event: string, properties: Record<string, unknown>) {
+    if(!event) {
+      throw new Error("event is required")
+    }
+    let indempotentKey = self.crypto.randomUUID();
+    await this.instance.post(`inbound/courier`, {
+      messageId: indempotentKey,
+      type:"track",
+      event: event, 
+      properties: properties
+    });
+  }
   async unsubscribe(userId: string, listId: string) {
     if (!userId || !listId) {
       throw new Error("userId is required");
