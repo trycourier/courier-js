@@ -48,7 +48,7 @@ export class Courier {
       throw new Error("Courier client key is required");
     }
     this.authorization = authorization;
-    this.baseUrl = `${baseUrl ?? "https://api.courier.com"}/client/`;
+    this.baseUrl = `${baseUrl ?? "https://api.courier.com"}`;
     this.clientKey = clientKey;
     this.debug = debug;
     this.userId = userId;
@@ -70,9 +70,9 @@ export class Courier {
     });
   }
 
-  async post<T>(path: string, body: T): Promise<void> {
+  async post<T>(path: string, body: T, useClientPath = true): Promise<void> {
     const postFn = () => {
-      return fetch(`${this.baseUrl}${path}`, {
+      return fetch(this.getPathURL(path, useClientPath), {
         body: JSON.stringify(body),
         headers: this.getHeaders(),
         method: "POST",
@@ -81,9 +81,9 @@ export class Courier {
     await tryCatch(postFn, this.debug);
   }
 
-  async put<T>(path: string, body?: T): Promise<void> {
+  async put<T>(path: string, body?: T, useClientPath = true): Promise<void> {
     const putFn = () => {
-      return fetch(`${this.baseUrl}${path}`, {
+      return fetch(this.getPathURL(path, useClientPath), {
         ...(body ? { body: JSON.stringify(body) } : {}),
         headers: this.getHeaders(),
         method: "PUT",
@@ -92,9 +92,9 @@ export class Courier {
     await tryCatch(putFn, this.debug);
   }
 
-  async delete(path: string): Promise<void> {
+  async delete(path: string, useClientPath = true): Promise<void> {
     const deleteFn = () => {
-      return fetch(`${this.baseUrl}${path}`, {
+      return fetch(this.getPathURL(path, useClientPath), {
         headers: this.getHeaders(),
         method: "DELETE",
       });
@@ -114,5 +114,13 @@ export class Courier {
     return `https://view.notificationcenter.app/p/${encode(
       `${id}#${options?.brandId ?? ""}#${userId}#${false}`
     )}`;
+  }
+
+  private getPathURL(path: string, useClientPath: boolean) {
+    let pathUrl = this.baseUrl;
+    if(useClientPath) {
+      pathUrl = pathUrl.concat("/client");
+    }
+    return pathUrl.concat(path);
   }
 }

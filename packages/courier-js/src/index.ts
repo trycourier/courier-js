@@ -19,7 +19,7 @@ const client = {
     if (!userId) {
       throw new Error("userId is required");
     }
-    await this.instance.post(`identify/${userId}`, {
+    await this.instance.post(`/identify/${userId}`, {
       profile: {
         ...payload,
       },
@@ -30,26 +30,26 @@ const client = {
     if (!userId || !listId) {
       throw new Error("userId is required");
     }
-    await this.instance.put(`lists/${listId}/subscribe/${userId}`);
+    await this.instance.put(`/lists/${listId}/subscribe/${userId}`);
   },
 
-  async track(event: string, properties: Record<string, unknown>) {
+  async track(event: string, properties?: Record<string, unknown>) {
     if(!event) {
       throw new Error("event is required")
     }
     let indempotentKey = self.crypto.randomUUID();
-    await this.instance.post(`inbound/courier`, {
+    await this.instance.post(`/inbound/courier`, {
       messageId: indempotentKey,
       type:"track",
       event: event, 
-      properties: properties
-    });
-  }
+      properties: {...properties}
+    }, false);
+  },
   async unsubscribe(userId: string, listId: string) {
     if (!userId || !listId) {
       throw new Error("userId is required");
     }
-    this.instance.delete(`lists/${listId}/unsubscribe/${userId}`);
+    this.instance.delete(`/lists/${listId}/unsubscribe/${userId}`);
   },
 
   generatePreferencesUrl(
