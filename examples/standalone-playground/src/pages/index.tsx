@@ -29,6 +29,12 @@ export default function Example() {
         await courierSDK.subscribe("suhas_demo", "my-awesome-list");
         console.log("subscribed");
         break;
+
+      case "track":
+        console.log("tracking event");
+        await courierSDK.track("my-awesome-track-event");
+        console.log("tracked");
+        break;
       case "unsubscribe":
         console.log("unsubscribing");
         await courierSDK.unsubscribe("suhas_demo", "my-awesome-list");
@@ -43,6 +49,7 @@ export default function Example() {
         <Link href={prefLink}>Manage your preferences</Link>
       </h2>
       <button onClick={() => handleEvent("identity")}>Identify</button>
+      <button onClick={() => handleEvent("track")}>Track</button>
       <button onClick={() => handleEvent("subscribe")}>Subscribe</button>
       <button onClick={() => handleEvent("unsubscribe")}>Unsubscribe</button>
     </div>
