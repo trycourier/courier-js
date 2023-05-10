@@ -1,12 +1,12 @@
 [![Courier: Your Complete Communication Stack](https://www.courier.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fz7iqk1q8njt4%2F1PZo9WNTdmoDoYH3yulXa0%2Fb10830f7bfb09af5e644a39ac3d20c41%2FCourierJS_header_alt2.png&w=1920&q=75)](https://courier.com)
 
 # Requirements
-
+&emsp;
 <table>
     <thead>
         <tr>
             <th width="880px" align="left">Requirements</th>
-            <th width="120px" align="center"></th>
+            <th width="120px" align="center">Details</th>
         </tr>
     </thead>
     <tbody>
@@ -28,35 +28,19 @@
         </tr>
     </tbody>
 </table>
+&emsp;
 
-## Installation
-
-```sh
-# npm
-npm install @trycourier/courier-js
-# yarn
-yarn add @trycourier/courier-js
-# pnpm
-pnpm add @trycourier/courier-js
-```
-
-# Getting Started
-
-These are all the available features of the SDK.
+# SDK Features
 
 <table>
     <thead>
         <tr>
-            <th width="25px"></th>
             <th width="250px" align="left">Feature</th>
             <th width="725px" align="left">Description</th>
         </tr>
     </thead>
     <tbody>
         <tr width="600px">
-            <td align="center">
-                1
-            </td>
             <td align="left">
                     <code>Identify</code>
             </td>
@@ -65,9 +49,6 @@ These are all the available features of the SDK.
             </td>
         </tr>
         <tr width="600px">
-            <td align="center">
-                2
-            </td>
             <td align="left">
                     <code>Track</code>
             </td>
@@ -78,6 +59,16 @@ These are all the available features of the SDK.
     </tbody>
 </table>
 
+# Installation
+
+```sh
+# npm
+npm install @trycourier/courier-js
+# yarn
+yarn add @trycourier/courier-js
+# pnpm
+pnpm add @trycourier/courier-js
+```
 &emsp;
 ## Usage
 
