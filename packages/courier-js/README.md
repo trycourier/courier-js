@@ -94,7 +94,7 @@ courier.init({
 await courierSDK.identify("purbleId", {
       email: "customer@purbleplace.com",
       favoriteColor: "purple",
-    });
+});
 ```
 ## Track
 ### Basic
@@ -106,7 +106,7 @@ await courierSDK.track("eventWithoutPayload");
 await courierSDK.track("bake-a-cake", { 
     cakeFlavor: "carrot", 
     frosting: "cream cheese"
-  });
+});
 ```
 ## GeneratePreferencesUrl
 ```ts
