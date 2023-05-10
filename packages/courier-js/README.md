@@ -63,7 +63,6 @@ These are all the available features of the SDK.
             <td align="left">
                 Event that triggers a user create/update within Courier Profiles.
             </td>
-            <>
         </tr>
         <tr width="600px">
             <td align="center">
@@ -75,7 +74,6 @@ These are all the available features of the SDK.
             <td align="left">
                 Event ingested by Courier that triggers an automation or supply inline payloads within an existing automation workflow.
             </td>
-            <>
         </tr>
     </tbody>
 </table>
