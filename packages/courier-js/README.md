@@ -77,7 +77,6 @@ These are all the available features of the SDK.
             </td>
             <>
         </tr>
-
     </tbody>
 </table>
 
