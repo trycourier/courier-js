@@ -91,11 +91,10 @@ courier.init({
 ```
 ## Identify
 ```ts
-await courierSDK.identify("purbleId", 
-  {
-    email: "customer@purbleplace.com",
-    favoriteColor: "purple",
-  });
+await courierSDK.identify("purbleId", {
+      email: "customer@purbleplace.com",
+      favoriteColor: "purple",
+    });
 ```
 ## Track
 ### Basic
@@ -104,10 +103,9 @@ await courierSDK.track("eventWithoutPayload");
 ```
 ### Data payload
 ```ts
-await courierSDK.track("bake-a-cake", 
-  { 
-    "cakeFlavor": "carrot", 
-    "frosting": "cream cheese"
+await courierSDK.track("bake-a-cake", { 
+    cakeFlavor: "carrot", 
+    frosting: "cream cheese"
   });
 ```
 ## GeneratePreferencesUrl
