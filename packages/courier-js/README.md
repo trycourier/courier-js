@@ -1,8 +1,6 @@
 [![Courier: Your Complete Communication Stack](https://www.courier.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fz7iqk1q8njt4%2F1PZo9WNTdmoDoYH3yulXa0%2Fb10830f7bfb09af5e644a39ac3d20c41%2FCourierJS_header_alt2.png&w=1920&q=75)](https://courier.com)
 
-# Requirements & Support
-
-&emsp;
+# Requirements
 
 <table>
     <thead>
@@ -42,6 +40,56 @@ yarn add @trycourier/courier-js
 pnpm add @trycourier/courier-js
 ```
 
+# Getting Started
+
+These are all the available features of the SDK.
+
+<table>
+    <thead>
+        <tr>
+            <th width="25px"></th>
+            <th width="250px" align="left">Feature</th>
+            <th width="725px" align="left">Description</th>
+            <th width="725px" align="left">Usage</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr width="600px">
+            <td align="center">
+                1
+            </td>
+            <td align="left">
+                    <code>Identify</code>
+            </td>
+            <td align="left">
+                Triggers a user profile create/update event thats ingested by Courier to then update.
+            </td>
+            <td align="left">
+                <code>await courierSDK.identify("userId", {
+          email: "customerEmail@purbleplace.com",
+          favoriteColor: "purple",
+        });</code>
+            </td>
+            <>
+        </tr>
+        <tr width="600px">
+            <td align="center">
+                2
+            </td>
+            <td align="left">
+                <a href="https://github.com/trycourier/courier-ios/blob/master/Docs/Inbox.md">
+                    <code>Courier Inbox</code>
+                </a>
+            </td>
+            <td align="left">
+                An in-app notification center you can use to notify your users. Comes with a prebuilt UI and also supports fully custom UIs.
+            </td>
+        </tr>
+
+    </tbody>
+</table>
+
+&emsp;
 ## Usage
 
 ```ts
