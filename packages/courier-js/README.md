@@ -50,7 +50,6 @@ These are all the available features of the SDK.
             <th width="25px"></th>
             <th width="250px" align="left">Feature</th>
             <th width="725px" align="left">Description</th>
-            <th width="725px" align="left">Usage</th>
         </tr>
     </thead>
     <tbody>
@@ -62,13 +61,7 @@ These are all the available features of the SDK.
                     <code>Identify</code>
             </td>
             <td align="left">
-                Triggers a user profile create/update event thats ingested by Courier to then update.
-            </td>
-            <td align="left">
-                <code>await courierSDK.identify("userId", {
-          email: "customerEmail@purbleplace.com",
-          favoriteColor: "purple",
-        });</code>
+                Event that triggers a user create/update within Courier Profiles.
             </td>
             <>
         </tr>
@@ -77,13 +70,12 @@ These are all the available features of the SDK.
                 2
             </td>
             <td align="left">
-                <a href="https://github.com/trycourier/courier-ios/blob/master/Docs/Inbox.md">
-                    <code>Courier Inbox</code>
-                </a>
+                    <code>Track</code>
             </td>
             <td align="left">
-                An in-app notification center you can use to notify your users. Comes with a prebuilt UI and also supports fully custom UIs.
+                Event ingested by Courier that triggers an automation or supply inline payloads within an existing automation workflow.
             </td>
+            <>
         </tr>
 
     </tbody>
