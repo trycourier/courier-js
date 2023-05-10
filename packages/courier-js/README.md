@@ -3,12 +3,11 @@
 # Overview
 SDK used by client applications to interface with the Courier API.
 &emsp;
-## Requirements
 <table>
     <thead>
         <tr>
-            <th width="880px" align="left"></th>
-            <th width="120px" align="center">Details</th>
+            <th width="880px" align="left">Requirement</th>
+            <th width="120px" align="center"></th>
         </tr>
     </thead>
     <tbody>
