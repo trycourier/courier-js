@@ -1,9 +1,5 @@
 [![Courier: Your Complete Communication Stack](https://www.courier.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fz7iqk1q8njt4%2F1PZo9WNTdmoDoYH3yulXa0%2Fb10830f7bfb09af5e644a39ac3d20c41%2FCourierJS_header_alt2.png&w=1920&q=75)](https://courier.com)
 
-## Requirements
-
-Sign up to [Courier](https://app.courier.com/signup) if you do not have an account with us and get your clientKey from [here](https://app.courier.com/settings/api-keys)
-
 # Requirements & Support
 
 &emsp;
@@ -28,7 +24,7 @@ Sign up to [Courier](https://app.courier.com/signup) if you do not have an accou
             <td align="left">Courier Client Key</td>
             <td align="center">
                 <a href="https://app.courier.com/settings/api-keys">
-                    <code>Api keys</code>
+                    <code>Get key</code>
                 </a>
             </td>
         </tr>
