@@ -174,3 +174,10 @@ To publish packages to a private npm organization scope, **remove** the followin
 ### GitHub Package Registry
 
 See [Working with the npm registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-a-package-using-publishconfig-in-the-packagejson-file)
+
+# **Share feedback with Courier**
+
+We are building the best SDKs for handling notifications! Have an idea or feedback about our SDKs? Here are some links to contact us:
+
+- [Courier Feedback](https://feedback.courier.com/)
+- [Courier JS Issues](https://github.com/trycourier/courier-js/issues)
