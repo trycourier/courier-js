@@ -42,7 +42,7 @@
     <tbody>
         <tr width="600px">
             <td align="left">
-                    <code>Identify</code>
+              <code>Identify</code>
             </td>
             <td align="left">
                 Event that triggers a user <a href="https://www.courier.com/docs/reference/profiles/create/"><code>Create</code></a> or <a href="https://www.courier.com/docs/reference/profiles/patch/"><code>Update</code></a> within Courier Profiles.
@@ -50,10 +50,18 @@
         </tr>
         <tr width="600px">
             <td align="left">
-                    <code>Track</code>
+              <code>Track</code>
             </td>
             <td align="left">
                 Event ingested by Courier that triggers an automation or supply inline payloads within an existing automation workflow.
+            </td>
+        </tr>
+        <tr width="600px">
+            <td align="left">
+                <code>GeneratePreferencesUrl</code>
+            </td>
+            <td align="left">
+                Generates URL that can be used to link users to Preferences Center to manage their notification preferences.
             </td>
         </tr>
     </tbody>
@@ -70,24 +78,38 @@ yarn add @trycourier/courier-js
 pnpm add @trycourier/courier-js
 ```
 &emsp;
-## Usage
+# Usage
 
+## Initialize Client
 ```ts
 import courier from "@trycourier/courier-js";
 
 courier.init({
   clientKey: "<REPLACE_WITH_YOUR_CLIENT_KEY>",
-  debug: true,
-});
-
-/*
-Upon initialization, you can use the SDK. All the methods are async and return a Promise `user | identify` means that you are identifying a user with a unique id in Courier and optionally passing in some user attributes like email, phone, etc. so that you can reach out to your users on right channels of their choice.
-*/
-courier.identify("<your_user_id>", {
-  email: "suhas+from+ui@courier.com",
+  debug: true, // debug enables client side logs for error catching
 });
 ```
-
+## Identify
+```ts
+await courierSDK.identify("purbleId", 
+  {
+    email: "customer@purbleplace.com",
+    favoriteColor: "purple",
+  });
+```
+## Track
+### Basic
+```ts
+await courierSDK.track("eventWithoutPayload");
+```
+### Data payload
+```ts
+await courierSDK.track("bake-a-cake", 
+  { 
+    "cakeFlavor": "carrot", 
+    "frosting": "cream cheese"
+  });
+```
 ## Send User to Preference Center
 
 This method generates a URL that you can use to send your users to the Courier Preference Center to let them manage their notification preferences. You can use this URL in your application to send your users to the Preference Center.
