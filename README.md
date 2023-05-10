@@ -4,7 +4,7 @@
 SDK used by client applications to interface with the Courier API. This is the repo where we host both the SDK and dependencies needed for the developer environment to contribute to it.
 
 # What does Courier-JS support?
-## See docs <a href="https://github.com/trycourier/courier-js/blob/main/README.md">here</a> to read about features and how to install the SDK into your existing project.
+See docs <a href="https://github.com/trycourier/courier-js/blob/main/README.md">here</a> to read about features and how to install the SDK into your existing project.
 
 &emsp;
 # Want to run this locally?
