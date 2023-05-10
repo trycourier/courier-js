@@ -53,7 +53,7 @@
               <code>Track</code>
             </td>
             <td align="left">
-                Event ingested by Courier that triggers an automation or supply inline payloads within an existing automation workflow.
+                Event ingested by Courier that triggers an automation or supplies inline payloads within an existing automation workflow.
             </td>
         </tr>
         <tr width="600px">
@@ -80,7 +80,7 @@ pnpm add @trycourier/courier-js
 &emsp;
 # Usage
 
-## Initialize Client
+## Initializing Client
 ```ts
 import courier from "@trycourier/courier-js";
 
@@ -91,7 +91,7 @@ courier.init({
 ```
 ## Identify
 ```ts
-await courierSDK.identify("purbleId", {
+await courierSDK.identify("purbleUserId", {
       email: "customer@purbleplace.com",
       favoriteColor: "purple",
 });
@@ -99,11 +99,11 @@ await courierSDK.identify("purbleId", {
 ## Track
 ### Basic
 ```ts
-await courierSDK.track("eventWithoutPayload");
+await courierSDK.track("user-signup");
 ```
 ### Data payload
 ```ts
-await courierSDK.track("bake-a-cake", { 
+await courierSDK.track("bake-cake", { 
     cakeFlavor: "carrot", 
     frosting: "cream cheese"
 });
