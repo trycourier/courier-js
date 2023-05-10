@@ -61,7 +61,7 @@ These are all the available features of the SDK.
                     <code>Identify</code>
             </td>
             <td align="left">
-                Event that triggers a user create/update within Courier Profiles.
+                Event that triggers a user <a href="https://www.courier.com/docs/reference/profiles/create/"><code>Create</code></a> or <a href="https://www.courier.com/docs/reference/profiles/patch/"><code>Update</code></a> within Courier Profiles.
             </td>
         </tr>
         <tr width="600px">
