@@ -1,11 +1,13 @@
 [![Courier: Your Complete Communication Stack](https://www.courier.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fz7iqk1q8njt4%2F1PZo9WNTdmoDoYH3yulXa0%2Fb10830f7bfb09af5e644a39ac3d20c41%2FCourierJS_header_alt2.png&w=1920&q=75)](https://courier.com)
 
-# Requirements
+# Overview
+SDK used by client applications to interface with the Courier API.
 &emsp;
+## Requirements
 <table>
     <thead>
         <tr>
-            <th width="880px" align="left">Requirements</th>
+            <th width="880px" align="left"></th>
             <th width="120px" align="center">Details</th>
         </tr>
     </thead>
@@ -19,7 +21,7 @@
             </td>
         </tr>
         <tr width="600px">
-            <td align="left">Courier Client Key</td>
+            <td align="left">Client API Key</td>
             <td align="center">
                 <a href="https://app.courier.com/settings/api-keys">
                     <code>Get key</code>
@@ -30,8 +32,7 @@
 </table>
 &emsp;
 
-# SDK Features
-
+# Supported Interfaces
 <table>
     <thead>
         <tr>
@@ -53,7 +54,7 @@
               <code>Track</code>
             </td>
             <td align="left">
-                Event ingested by Courier that triggers an automation or supplies inline payloads within an existing automation workflow.
+                Event ingested by Courier can be used to<a href="https://www.courier.com/docs/automations/designer/"> trigger an automation</a> or supply inline payloads within an <a href="https://app.courier.com/automations">existing</a> automation workflow.
             </td>
         </tr>
         <tr width="600px">
@@ -61,7 +62,7 @@
                 <code>GeneratePreferencesUrl</code>
             </td>
             <td align="left">
-                Generates URL that can be used to link users to Preferences Center to manage their notification preferences.
+                Generates URL that can be used to link users to <a href="https://www.courier.com/docs/courier-preferences/preference-center/introduction/">Preferences Center</a> to manage their notification preferences.
             </td>
         </tr>
     </tbody>
@@ -101,7 +102,7 @@ await courierSDK.identify("purbleUserId", {
 ```ts
 await courierSDK.track("user-signup");
 ```
-### Data payload
+### With data payload
 ```ts
 await courierSDK.track("bake-cake", { 
     cakeFlavor: "carrot", 
