@@ -110,13 +110,10 @@ await courierSDK.track("bake-a-cake",
     "frosting": "cream cheese"
   });
 ```
-## Send User to Preference Center
-
-This method generates a URL that you can use to send your users to the Courier Preference Center to let them manage their notification preferences. You can use this URL in your application to send your users to the Preference Center.
-
+## GeneratePreferencesUrl
 ```ts
-const prefCenterLink = courier.generatePreferencesUrl("<your_user_id>", {
+const prefCenterLink = courier.generatePreferencesUrl("<user-id>", {
   // optional
-  brandId: "<your_brand_id>",
+  brandId: "<brand-id>",
 });
 ```
