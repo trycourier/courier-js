@@ -4,6 +4,37 @@
 
 Sign up to [Courier](https://app.courier.com/signup) if you do not have an account with us and get your clientKey from [here](https://app.courier.com/settings/api-keys)
 
+# Requirements & Support
+
+&emsp;
+
+<table>
+    <thead>
+        <tr>
+            <th width="880px" align="left">Requirements</th>
+            <th width="120px" align="center"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr width="600px">
+            <td align="left">Courier Account</td>
+            <td align="center">
+                <a href="https://app.courier.com/signup">
+                    <code>Sign Up</code>
+                </a>
+            </td>
+        </tr>
+        <tr width="600px">
+            <td align="left">Courier Client Key</td>
+            <td align="center">
+                <a href="https://app.courier.com/settings/api-keys">
+                    <code>Api keys</code>
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
 ## Installation
 
 ```sh
