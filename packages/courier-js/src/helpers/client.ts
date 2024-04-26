@@ -12,6 +12,7 @@ export type CourierOptions = {
 
 export type PreferenceLinkOptions = {
   brandId?: string;
+  tenantId?: string;
 };
 
 async function tryCatch(
@@ -112,7 +113,7 @@ export class Courier {
     const id = decode(this.clientKey);
 
     return `https://view.notificationcenter.app/p/${encode(
-      `${id}#${options?.brandId ?? ""}#${userId}#${false}`
+      `${id}#${options?.brandId ?? ""}#${userId}${options?.tenantId?`#${options.tenantId}`:""}#${false}`
     )}`;
   }
 
