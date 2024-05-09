@@ -37,7 +37,8 @@ const client = {
     if(!event) {
       throw new Error("event is required")
     }
-    let indempotentKey = self.crypto.randomUUID();
+    let indempotentKey = Math.random().toString(36).substring(2, 15) +
+        Math.random().toString(36).substring(2, 15);
     await this.instance.post(`/inbound/courier`, {
       messageId: indempotentKey,
       type:"track",
