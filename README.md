@@ -1,19 +1,22 @@
-[![Courier: Your Complete Communication Stack](https://www.courier.com/_next/image/?url=https%3A%2F%2Fimages.ctfassets.net%2Fz7iqk1q8njt4%2F1PZo9WNTdmoDoYH3yulXa0%2Fb10830f7bfb09af5e644a39ac3d20c41%2FCourierJS_header_alt2.png&w=1920&q=75)](https://courier.com)
+# [DEPRECATED] `courier-js`
 
-# Overview
-SDK used by client applications to interface with the Courier API. This is the repo where we host both the SDK and dependencies needed for the developer environment to contribute to it.
-
-# What does Courier-JS support?
-See docs <a href="https://github.com/trycourier/courier-js/blob/main/packages/courier-js/README.md">here</a> to read about features and how to install the SDK into your existing project.
-
-&emsp;
-# Want to run this locally?
-
-This repository contains client-sdk for Courier API. This SDK allows you to integrate Courier API into your web applications.
+> This package is **DEPRECATED** and will receive only security fixes going forward.
+> Please use the version 2+ of [`@trycourier/courier-js`](https://github.com/trycourier/courier-web/tree/main/%40trycourier/courier-js),
+> part of the [`courier-web`](https://github.com/trycourier/courier-web) repository.
 
 ## Overview
 
-### Repo Packages
+SDK used by client applications to interface with the Courier API. This is the repo where we host both the SDK and dependencies needed for the developer environment to contribute to it.
+
+## What does Courier-JS support?
+
+See docs <a href="https://github.com/trycourier/courier-js/blob/main/packages/courier-js/README.md">here</a> to read about features and how to install the SDK into your existing project.
+
+## Want to run this locally?
+
+This repository contains client-sdk for Courier API. This SDK allows you to integrate Courier API into your web applications.
+
+## Repo Packages
 
 - `examples/standalone-playground`: A placeholder web application powered by [Next.js](https://nextjs.org/) that uses the `@trycourier/courier-js` package for demonstration purposes
 - `@trycourier/courier-js`: core client SDK for Courier API
@@ -69,9 +72,8 @@ To publish packages to a private npm organization scope, **remove** the followin
 
 See [Working with the npm registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-npm-registry#publishing-a-package-using-publishconfig-in-the-packagejson-file)
 
-# **Share feedback with Courier**
+## **Share feedback with Courier**
 
 We are building the best SDKs for handling notifications! Have an idea or feedback about our SDKs? Here are some links to contact us:
 
-- [Courier Feedback](https://feedback.courier.com/)
 - [Courier JS Issues](https://github.com/trycourier/courier-js/issues)
