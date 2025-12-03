@@ -37,10 +37,10 @@ const client = {
     if(!event) {
       throw new Error("event is required")
     }
-    let indempotentKey = (self.crypto.randomUUID) ? self.crypto.randomUUID() : Math.random().toString(36).substring(2, 15) +
+    let idempotentKey = (self?.crypto?.randomUUID) ? self.crypto.randomUUID() : Math.random().toString(36).substring(2, 15) +
   Math.random().toString(36).substring(2, 15);
     await this.instance.post(`/inbound/courier`, {
-      messageId: indempotentKey,
+      messageId: idempotentKey,
       type:"track",
       event: event, 
       properties: {...properties}
